@@ -115,3 +115,6 @@ export PATH=$PATH:/opt/anaconda/bin
 # lvim
 export PATH=/home/yeshooo/.local/bin:$PATH
 PATH=/home/yeshooo/.local/bin:/home/yeshooo/.local/bin:/home/yeshooo/.nvm/versions/node/v18.15.0/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/yeshooo/dotnet:/opt/anaconda/bin:/home/yeshooo/dotnet:/opt/anaconda/bin:~/.local/share/dwm/statusbar
+
+# 
+export LANGUAGE=ZH-CN.UTF-8
