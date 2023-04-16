@@ -50,10 +50,12 @@ fi
 
 
 # 启动xdman下载工具
-xdman &
+#xdman &
 
 # 启动坚果云
 nutstore &
 
 # 启动bspwm
 exec bspwm
+
+# 
