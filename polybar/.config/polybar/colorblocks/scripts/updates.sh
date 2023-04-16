@@ -1,0 +1,1 @@
+../../../../dotfiles/polybar/.config/polybar/colorblocks/scripts/updates.sh

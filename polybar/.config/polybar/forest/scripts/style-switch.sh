@@ -1,0 +1,1 @@
+../../../../dotfiles/polybar/.config/polybar/forest/scripts/style-switch.sh

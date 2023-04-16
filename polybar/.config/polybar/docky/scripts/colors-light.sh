@@ -1,0 +1,1 @@
+../../../../dotfiles/polybar/.config/polybar/docky/scripts/colors-light.sh

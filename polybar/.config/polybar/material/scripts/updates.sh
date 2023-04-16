@@ -1,0 +1,1 @@
+../../../../dotfiles/polybar/.config/polybar/material/scripts/updates.sh

@@ -1,0 +1,13 @@
+/**
+ *
+ * Author : Aditya Shakya (adi1090x)
+ * Github : @adi1090x
+ * 
+ * Fonts
+ *
+ **/
+
+* {
+    font: "JetbrainsMono Nerd Font Mono 30";
+   // font: "Iosevka Nerd Font 30";
+}
