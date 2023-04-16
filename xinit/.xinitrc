@@ -49,5 +49,11 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 
+# 启动xdman下载工具
+xdman &
+
+# 启动坚果云
 nutstore &
+
+# 启动bspwm
 exec bspwm
