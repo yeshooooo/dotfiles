@@ -1,1 +1,0 @@
-../../../../dotfiles/polybar/.config/polybar/shades/scripts/color-switch.sh

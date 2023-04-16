@@ -1,1 +1,0 @@
-../../../../dotfiles/polybar/.config/polybar/cuts/scripts/colors-light.sh

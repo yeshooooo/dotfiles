@@ -1,1 +1,0 @@
-../../../../dotfiles/polybar/.config/polybar/blocks/scripts/powermenu.sh

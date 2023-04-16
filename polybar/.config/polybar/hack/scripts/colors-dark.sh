@@ -1,1 +1,0 @@
-../../../../dotfiles/polybar/.config/polybar/hack/scripts/colors-dark.sh

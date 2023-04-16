@@ -1,1 +1,0 @@
-../../../../dotfiles/polybar/.config/polybar/grayblocks/scripts/color-switch.sh
