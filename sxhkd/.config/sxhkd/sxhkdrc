@@ -2,6 +2,16 @@
 # wm independent hotkeys
 #
 
+
+# Workstation Monitor
+#
+
+alt + w
+	bspc monitor -f next
+
+
+
+
 # terminal emulator
 super + Return
 #	urxvt
@@ -12,6 +22,13 @@ super + Return
 super + shift + Return
 	bspc rule -a Alacritty -o state=floating follow=on && alacritty
 
+
+#
+# Focus on floating / tiled
+# https://github.com/windelicato/dotfiles/blob/master/.config/sxhkd/sxhkdrc
+#
+super + e
+	bspc window -f {next.floating,next.tiled}
 
 #
 # @符号表示松开时才触发
@@ -110,8 +127,14 @@ super + {o,i}
 	bspc wm -h on
 
 # focus or send to the given desktop
+#super + {_,shift + }{1-9,0}
+#	bspc {desktop -f,node -d} '^{1-9,10}'
+#	
+# 双屏显示器下在聚焦的屏幕中切换窗口标签
+# 受启发于https://forum.endeavouros.com/t/multi-monitor-in-bspwm/17618/3
+# 不过这里也要改polybar,不然polybar只切换一个屏幕上的便签(暂时未改)
 super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+	bspc {desktop -f,node -d} focused:'^{1-9,10}'
 
 #
 # preselect
@@ -148,3 +171,28 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# 
+# Resize floating windows
+# https://github.com/windelicato/dotfiles/blob/master/.config/sxhkd/sxhkdrc
+#
+super + shift + {h,l,k,j}
+	xdo resize {-w -20,-w +20,-h -20,-h +20}	bspc window -e {h -10,j +10,k -10,l +10} || {l -10,k +10,j -10,h +10}
+
+
+
+
+
+#
+# Mouse bindings
+# 启发于https://github.com/windelicato/dotfiles/blob/master/.config/sxhkd/sxhkdrc
+# 
+
+# Move or resize window
+super + button{1-3}
+	bspc pointer -g {move,resize_side,resize_corner}
+
+# 
+# spawn programs
+# 
+
