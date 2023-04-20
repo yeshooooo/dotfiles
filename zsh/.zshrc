@@ -118,3 +118,11 @@ PATH=/home/yeshooo/.local/bin:/home/yeshooo/.local/bin:/home/yeshooo/.nvm/versio
 
 # 启动时随即显示像素图画
 $HOME/.local/bin/colorscript -r
+
+# 设置fzf使用ripgrep
+# FZF_DEFAULT_OPTS 的-m 变量可以使按下<Tab> 或 <Shift-Tab>后进行多重选择。
+# 如果仅让fzf在vim中使用,这个设置不是必须的
+if type  rg &> /dev/null; then
+	export FZF_DEFAULT_COMMAND='rg --files'
+	export FZF_DEFAULT_OPTS='-m'
+fi
