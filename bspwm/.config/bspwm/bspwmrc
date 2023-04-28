@@ -1,0 +1,119 @@
+#! /bin/sh
+
+#
+# 启动sxhkd
+#
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+
+#
+# 设置正确的屏幕顺序
+# 脚本由arandr程序自动生成,并保存在bspwm的scripts目录下的
+# https://blog.csdn.net/lxyoucan/article/details/124794123
+#
+$HOME/.config/bspwm/scripts/screen-order.sh &
+
+
+#
+# 设置鼠标样式，默认为X号
+xsetroot -cursor_name left_ptr
+
+
+#
+# 设置壁纸
+# 用一个小脚本每2m设置一下就好
+#
+
+$HOME/.config/bspwm/scripts/auto-change-wallpapers.sh &
+
+
+#
+# 启动polybar
+# polybar-themes
+# https://github.com/adi1090x/polybar-themes
+# 也可以paru 安装polybar-themes-git
+#~/.config/polybar/launch.sh --forest
+# polybar-collection
+# https://github.com/Murzchnvok/polybar-collection
+#$HOME/polybar-collection/launch.sh
+$HOME/.config/polybar/polybar-collection/launch.sh
+
+#
+# 启动网络托盘
+# nm-applet &
+
+#
+# 启动蓝牙系统托盘
+blueman-applet &
+
+#
+# 启动数字小键盘
+numlockx on
+
+#
+# 启动picom窗口合成器
+picom &
+
+#
+# 启动fcitx5
+fcitx5 &
+
+#
+# 启动jetbrains-toolbox
+#jetbrains-toolbox &
+
+#
+# 启动坚果云
+# 改为再.xinitrc中提前启用，这样就不用每次开启就弹窗口了
+#nutstore &
+
+# 启动xdman下载工具
+# 依然改为在.xinitrc中启动
+
+#xdman &
+#
+#
+#
+#
+
+
+# 双显示器设置,受启发于archwiki中bspwm下面的推荐连接
+# https://github.com/windelicato/dotfiles
+#
+#注意：受启发于https://github.com/polybar/polybar/issues/763
+#在polybar中也要设置多显示器显示
+i = 1
+for monitor in $(bspc query -M); do
+bspc monitor $monitor -n "$i" -d $i/{i,ii,iii,iv,v,vi,vii,viii,ix,x}
+	let i++
+done
+#NMON=$i
+#unset i
+#bspc monitor -d I II III IV V VI VII VIII IX X
+
+
+#
+# Visual options
+# 可视化参数
+# 参数通过man bspwm获得
+bspc config border_width         2
+bspc config window_gap          12
+bspc config focused_border_color	\#00FF00
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+# 
+bspc config focus_follows_pointer true
+
+
+
+#
+# Rules
+# 规则
+#
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
