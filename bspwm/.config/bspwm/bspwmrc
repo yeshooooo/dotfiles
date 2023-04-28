@@ -40,7 +40,7 @@ $HOME/.config/polybar/polybar-collection/launch.sh
 
 #
 # 启动网络托盘
-# nm-applet &
+nm-applet &
 
 #
 # 启动蓝牙系统托盘
