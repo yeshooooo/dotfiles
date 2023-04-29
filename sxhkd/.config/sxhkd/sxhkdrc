@@ -129,7 +129,8 @@ super + {o,i}
 #  个人总结：
 #  node -m next是移动不同的显示器
 #  node -d 是移动不同的桌面
-#  受启发于：
+#  受启发于:
+#  https://www.bilibili.com/video/BV1dB4y1w7FB/?spm_id_from=333.999.0.0&vd_source=c6ca89f75d00cd4da634736edfcca1ae
 #  https://github.com/arcolinux/arcolinux-bspwm/blob/master/etc/skel/.config/bspwm/sxhkd/sxhkdrc
 #
 #
@@ -145,12 +146,23 @@ super + {o,i}
 # 双屏显示器下在聚焦的屏幕中切换窗口标签
 # 受启发于https://forum.endeavouros.com/t/multi-monitor-in-bspwm/17618/3
 # 不过这里也要改polybar,不然polybar只切换一个屏幕上的便签(暂时未改)
-#super + {_,shift + }{1-9,0}
-#	bspc {desktop -f,node -d} focused:'^{1-9,10}'
+#
+#
+#
+###################### 切换并且发送当前窗口到标签桌面
+# 可以在命令最末尾添加 --follow 跟随
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} focused:'^{1-9,10}' --follow
 
+##################### 将当前窗口发送到另一个屏幕
+#  指定标签 思路： 目前失败
+#super + shift + {Left,Down,Up,Right} + {1-9,0}
+	#bspc node -m next --follow desktop -f '^{1-9,10'
+#	bspc {node -m next --follow,desktop -f '^{1-9,10'}
 
-
-
+# 将当前窗口移动到另一个屏幕,跟随选中的话使用--follow
+super + shift + {Left,Down,Up,Right}
+	bspc node -m next --follow
 
 
 
