@@ -47,6 +47,14 @@ nm-applet &
 blueman-applet &
 
 #
+# 启动volctl音量托盘
+volctl &
+
+#
+# 启动麦克风系统托盘
+#mictray &
+
+#
 # 启动数字小键盘
 numlockx on
 
