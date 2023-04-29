@@ -67,6 +67,12 @@ fcitx5 &
 # 改为再.xinitrc中提前启用，这样就不用每次开启就弹窗口了
 #nutstore &
 
+# 
+# U盘自动挂载
+# 参考https://zhuanlan.zhihu.com/p/568211941
+udiskie &
+
+
 # 启动xdman下载工具
 # 依然改为在.xinitrc中启动
 
@@ -76,20 +82,43 @@ fcitx5 &
 #
 #
 
+########################## Single monitor #####################
+##########################    单显示器    #####################
+bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
+########################## 双显示器设置  #######################
+
+
+######################### 方法1 ###############################
 # 双显示器设置,受启发于archwiki中bspwm下面的推荐连接
 # https://github.com/windelicato/dotfiles
 #
 #注意：受启发于https://github.com/polybar/polybar/issues/763
 #在polybar中也要设置多显示器显示
-i = 1
-for monitor in $(bspc query -M); do
-bspc monitor $monitor -n "$i" -d $i/{i,ii,iii,iv,v,vi,vii,viii,ix,x}
-	let i++
-done
-#NMON=$i
-#unset i
-#bspc monitor -d I II III IV V VI VII VIII IX X
+#i = 1
+#for monitor in $(bspc query -M); do
+#bspc monitor $monitor -n "$i" -d $i/{i,ii,iii,iv,v,vi,vii,viii,ix,x}
+#	let i++
+#done
+
+####################### 方法2 #################################
+# 参考资料https://www.bilibili.com/video/BV1dB4y1w7FB/?spm_id_from=333.999.0.0
+# https://github.com/arcolinux/arcolinux-bspwm/blob/master/etc/skel/.config/bspwm/bspwmrc
+# 使用xrandr 查找显示器名字
+#find out names with arandr or xrandr
+#bspc monitor DP-2 -d 1 2 3 4 5 6 7 8 9
+#bspc monitor LVDS1 -d 1 2 3 4
+#bspc monitor DP3 -d  5 6 7 8 9
+#bspc monitor HDMI-0 -d 1 2 3 4 5 6 7 8 9 10
+#bspc monitor HDMI-1 -d 1 2 3 4 5 6 7 8 9 10
+#bspc monitor HDMI1 -d 1 2 3 4 5
+#bspc monitor HDMI2 -d 6 7 8 9 10
+
+
+bspc monitor DP-2 -d 1 2 3 4 5 6 7 8 9 10
+bspc monitor DP-4 -d 1 2 3 4 5 6 7 8 9 10
+
+
 
 
 #

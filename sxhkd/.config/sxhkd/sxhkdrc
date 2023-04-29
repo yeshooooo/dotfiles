@@ -125,7 +125,19 @@ super + {o,i}
 	bspc wm -h off; \
 	bspc node {older,newer} -f; \
 	bspc wm -h on
-
+######################### 屏幕及窗口切换和移动
+#  个人总结：
+#  node -m next是移动不同的显示器
+#  node -d 是移动不同的桌面
+#  受启发于：
+#  https://github.com/arcolinux/arcolinux-bspwm/blob/master/etc/skel/.config/bspwm/sxhkd/sxhkdrc
+#
+#
+#
+#
+#
+#
+#
 # focus or send to the given desktop
 #super + {_,shift + }{1-9,0}
 #	bspc {desktop -f,node -d} '^{1-9,10}'
@@ -133,9 +145,25 @@ super + {o,i}
 # 双屏显示器下在聚焦的屏幕中切换窗口标签
 # 受启发于https://forum.endeavouros.com/t/multi-monitor-in-bspwm/17618/3
 # 不过这里也要改polybar,不然polybar只切换一个屏幕上的便签(暂时未改)
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} focused:'^{1-9,10}'
+#super + {_,shift + }{1-9,0}
+#	bspc {desktop -f,node -d} focused:'^{1-9,10}'
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###########################################################################
 #
 # preselect
 #
