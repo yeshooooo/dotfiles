@@ -36,7 +36,7 @@ $HOME/.config/bspwm/scripts/auto-change-wallpapers.sh &
 # polybar-collection
 # https://github.com/Murzchnvok/polybar-collection
 #$HOME/polybar-collection/launch.sh
-$HOME/.config/polybar/polybar-collection/launch.sh
+#$HOME/.config/polybar/polybar-collection/launch.sh
 
 #
 # 启动网络托盘
