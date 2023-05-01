@@ -58,4 +58,5 @@ fi
 # 启动bspwm
 #exec bspwm
 
-# 
+# 启动xfce4
+startxfce4 
