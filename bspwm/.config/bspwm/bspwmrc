@@ -28,6 +28,9 @@ $HOME/.config/bspwm/scripts/auto-change-wallpapers.sh &
 
 #
 # 启动plank
+# 不能在这启动,在这启动的话会被遮挡
+#sleep 10
+#plank -n primdock &
 
 
 

@@ -60,3 +60,6 @@ fi
 
 # 启动xfce4
 startxfce4 
+
+# 延迟启动plank
+plank -n primdock
