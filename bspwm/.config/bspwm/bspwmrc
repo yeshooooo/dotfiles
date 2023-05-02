@@ -11,7 +11,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 # 脚本由arandr程序自动生成,并保存在bspwm的scripts目录下的
 # https://blog.csdn.net/lxyoucan/article/details/124794123
 #
-#$HOME/.config/bspwm/scripts/screen-order.sh &
+$HOME/.config/bspwm/scripts/screen-order.sh &
 
 
 #
