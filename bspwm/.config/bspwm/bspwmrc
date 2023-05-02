@@ -26,6 +26,11 @@ xsetroot -cursor_name left_ptr
 
 $HOME/.config/bspwm/scripts/auto-change-wallpapers.sh &
 
+#
+# 启动plank
+
+
+
 
 #
 # 启动polybar
