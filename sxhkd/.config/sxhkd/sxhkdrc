@@ -229,17 +229,22 @@ super + shift + {h,l,k,j}
 # Mouse bindings
 # 启发于https://github.com/windelicato/dotfiles/blob/master/.config/sxhkd/sxhkdrc
 # 
-
+# 官方鼠标问题https://github.com/baskerville/bspwm/issues/599
+# 
+#
+# 最终解决方案
+# 此帖说新版本鼠标绑定在bspwm配置文件而不在sxhkd中https://www.reddit.com/r/bspwm/comments/6pdirx/unknown_domain_or_command_pointer/
+# 此贴中说bspwm默认使用键盘绑定，会自动处理
 # Move or resize window
-super + button{1-3}
-	bspc pointer -g {move,resize_side,resize_corner}
+#super + button{1-3}
+#	bspc pointer -g {move,resize_side,resize_corner}
 # Needed for ^^^^
-alt + !button{1-3}
-    bspc pointer -t %i %i
+#alt + !button{1-3}
+#    bspc pointer -t %i %i
 
 
-super + @button{1-3}
-    bspc pointer -u
+#super + @button{1-3}
+#    bspc pointer -u
 
 # 
 # spawn programs
