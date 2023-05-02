@@ -140,7 +140,17 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 # 
+# 鼠标相关设置新版本在bspwmrc中设置而不在sxhkd中里https://www.reddit.com/r/bspwm/comments/6pdirx/unknown_domain_or_command_pointer/
+# 参考自https://github.com/gh0stzk/dotfiles/blob/master/config/bspwm/bspwmrc
+# 相关参数 能够接受的值在man bspwm中有
 bspc config focus_follows_pointer true
+bspc config pointer_follows_focus false
+#bspc config pointer_motion_interval       5
+#bspc config pointer_modifier              mod4 
+bspc config pointer_action1               move 
+bspc config pointer_action2               resize_side 
+bspc config pointer_action3               resize_corner
+
 
 
 
