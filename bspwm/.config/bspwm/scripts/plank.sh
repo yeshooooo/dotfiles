@@ -1,8 +1,15 @@
 #!/bin/bash
 
 
-ps -ef | grep cairo-dock | grep -v grep
+while true
+do
+
+ps -ef | grep bspwm | grep -v grep
 if [ $? -ne 0 ]; 
 then
-	plank -n primdock
+	echo "bspwm not start";
+else
+	plank -n primdock;
+	break;
 fi
+done

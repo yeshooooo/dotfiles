@@ -128,4 +128,11 @@ if type  rg &> /dev/null; then
 	export FZF_DEFAULT_OPTS='-m'
 fi
 
+# 开启plank,且屏蔽警告信息等
+# https://blog.csdn.net/S_o_h_o_t/article/details/119853711
+#ps -ef | grep plank | grep -v grep
+#if [ $? -ne 0 ];
+#then
+	#plank -n primdock & 2>>/dev/null
 
+#fi
