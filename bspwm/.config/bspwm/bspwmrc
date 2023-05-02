@@ -11,7 +11,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 # 脚本由arandr程序自动生成,并保存在bspwm的scripts目录下的
 # https://blog.csdn.net/lxyoucan/article/details/124794123
 #
-$HOME/.config/bspwm/scripts/screen-order.sh &
+#$HOME/.config/bspwm/scripts/screen-order.sh &
 
 
 #
@@ -40,15 +40,15 @@ $HOME/.config/bspwm/scripts/auto-change-wallpapers.sh &
 
 #
 # 启动网络托盘
-nm-applet &
+#nm-applet &
 
 #
 # 启动蓝牙系统托盘
-blueman-applet &
+#blueman-applet &
 
 #
 # 启动volctl音量托盘
-volctl &
+#volctl &
 
 #
 # 启动麦克风系统托盘
@@ -92,7 +92,7 @@ udiskie &
 
 ########################## Single monitor #####################
 ##########################    单显示器    #####################
-bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+#bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
 ########################## 双显示器设置  #######################
 
