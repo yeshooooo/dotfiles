@@ -3,8 +3,7 @@
 #
 # 启动sxhkd
 #
-pgrep -x sxhkd > /dev/null || sxhkd &
-
+pgrep -x sxhkd >/dev/null || sxhkd &
 
 #
 # 设置正确的屏幕顺序
@@ -13,11 +12,9 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 #
 $HOME/.config/bspwm/scripts/screen-order.sh &
 
-
 #
 # 设置鼠标样式，默认为X号
 xsetroot -cursor_name left_ptr
-
 
 #
 # 设置壁纸
@@ -28,12 +25,17 @@ $HOME/.config/bspwm/scripts/auto-change-wallpapers.sh &
 
 #
 # 启动plank
-# 不能在这启动,在这启动的话会被遮挡
+# 利用脚本方法,防止plank被窗口遮挡 
 #sleep 10
 #plank -n primdock &
+$HOME/.config/bspwm/scripts/plank.sh &
 
 
 
+# cairo-dock
+#
+
+#$HOME/.config/bspwm/scripts/cairo-dock.sh &
 
 #
 # 启动polybar
@@ -83,11 +85,10 @@ fcitx5 &
 # 改为再.xinitrc中提前启用，这样就不用每次开启就弹窗口了
 #nutstore &
 
-# 
+#
 # U盘自动挂载
 # 参考https://zhuanlan.zhihu.com/p/568211941
 udiskie &
-
 
 # 启动xdman下载工具
 # 依然改为在.xinitrc中启动
@@ -103,7 +104,6 @@ udiskie &
 #bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
 ########################## 双显示器设置  #######################
-
 
 ######################### 方法1 ###############################
 # 双显示器设置,受启发于archwiki中bspwm下面的推荐连接
@@ -130,44 +130,35 @@ udiskie &
 #bspc monitor HDMI1 -d 1 2 3 4 5
 #bspc monitor HDMI2 -d 6 7 8 9 10
 
-
 # 全部十个标签
 #bspc monitor DP-2 -d 1 2 3 4 5 6 7 8 9 10
 #bspc monitor DP-4 -d 1 2 3 4 5 6 7 8 9 10
 #
 # 俩都10个太多了,用不过来
-bspc monitor DP-2 -d 1 2 3 4 5 
+bspc monitor DP-2 -d 1 2 3 4 5
 bspc monitor DP-4 -d 6 7 8 9 10
-
-
-
-
-
 
 #
 # Visual options
 # 可视化参数
 # 参数通过man bspwm获得
-bspc config border_width         2
-bspc config window_gap          12
-bspc config focused_border_color	\#00FF00
-bspc config split_ratio          0.52
-bspc config borderless_monocle   true
-bspc config gapless_monocle      true
-# 
+bspc config border_width 2
+bspc config window_gap 12
+bspc config focused_border_color \#00FF00
+bspc config split_ratio 0.52
+bspc config borderless_monocle true
+bspc config gapless_monocle true
+#
 # 鼠标相关设置新版本在bspwmrc中设置而不在sxhkd中里https://www.reddit.com/r/bspwm/comments/6pdirx/unknown_domain_or_command_pointer/
 # 参考自https://github.com/gh0stzk/dotfiles/blob/master/config/bspwm/bspwmrc
 # 相关参数 能够接受的值在man bspwm中有
 bspc config focus_follows_pointer true
 bspc config pointer_follows_focus false
 #bspc config pointer_motion_interval       5
-#bspc config pointer_modifier              mod4 
-bspc config pointer_action1               move 
-bspc config pointer_action2               resize_side 
-bspc config pointer_action3               resize_corner
-
-
-
+#bspc config pointer_modifier              mod4
+bspc config pointer_action1 move
+bspc config pointer_action2 resize_side
+bspc config pointer_action3 resize_corner
 
 #
 # Rules
@@ -179,5 +170,3 @@ bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
-
-

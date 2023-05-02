@@ -128,3 +128,4 @@ if type  rg &> /dev/null; then
 	export FZF_DEFAULT_OPTS='-m'
 fi
 
+
