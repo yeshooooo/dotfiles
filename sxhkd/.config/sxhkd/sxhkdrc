@@ -18,7 +18,7 @@ super + Return
 	alacritty
 	
 # 设置浮动窗口
-# bspc rule -a 后面必须跟的是类名，使用xprop | gerp WM_CLASS 命令点击相应窗口即可获取对应的类名
+# bspc rule -a 后面必须跟的是类名，使用xprop | grep WM_CLASS 命令点击相应窗口即可获取对应的类名
 # 窗口大小设置受启发于man alacritty中的-o 参数，覆盖默认配置文件
 # 参数名字http://blog.dreamfever.me/2021/02/13/alacritty-pei-zhi-zhi-nan/
 super + shift + Return
@@ -31,7 +31,6 @@ super + shift + Return
 #
 super + e
 	#bspc window -f {next.floating,next.tiled}
-	bspc window -f next
 
 #
 # @符号表示松开时才触发
@@ -53,7 +52,11 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 
-
+# 启动plank
+#
+#super + 1
+	#~/.config/bspwm/scripts/plank.sh
+#	bspc rule -a Plank -o state=floating && plank -n primdock
 #
 # 应用程序快捷键
 #

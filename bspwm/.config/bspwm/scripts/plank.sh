@@ -9,7 +9,7 @@ if [ $? -ne 0 ];
 then
 	echo "bspwm not start";
 else
-	plank -n primdock;
+	nohup plank -n primdock;
 	break;
 fi
 done
