@@ -26,7 +26,7 @@ font:
     # style: "Medium Italic"
 
   # Point size of the font
-  size: 16.0
+  size: 14.0
 
 window:
   opacity: 0.3
