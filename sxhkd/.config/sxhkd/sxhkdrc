@@ -31,6 +31,7 @@ super + shift + Return
 #
 super + e
 	#bspc window -f {next.floating,next.tiled}
+	bspc desktop -f {next.floating,next.tiled}
 
 #
 # @符号表示松开时才触发
