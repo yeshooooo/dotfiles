@@ -31,7 +31,8 @@ super + shift + Return
 #
 super + e
 	#bspc window -f {next.floating,next.tiled}
-	bspc desktop -f {next.floating,next.tiled}
+	#bspc node -f {last.floating,last.tiled}
+	bspc node -f last.focused.tiled
 
 #
 # @符号表示松开时才触发

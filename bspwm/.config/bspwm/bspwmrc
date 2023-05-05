@@ -27,7 +27,7 @@ $HOME/.config/bspwm/scripts/auto-change-wallpapers.sh &
 # 启动plank
 # 利用脚本方法,防止plank被窗口遮挡 
 #sleep 10
-#plank -n primdock &
+plank -n prim &
 #$HOME/.config/bspwm/scripts/plank.sh &
 
 
@@ -156,7 +156,7 @@ bspc config gapless_monocle true
 # 参考自https://github.com/gh0stzk/dotfiles/blob/master/config/bspwm/bspwmrc
 # 相关参数 能够接受的值在man bspwm中有
 bspc config focus_follows_pointer true
-bspc config pointer_follows_focus false
+bspc config pointer_follows_focus true
 #bspc config pointer_motion_interval       5
 #bspc config pointer_modifier              mod4
 bspc config pointer_action1 move
@@ -173,3 +173,7 @@ bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+
+# plank始终置顶设置,受chatgpt启发
+# bspwm窗口通常被放置在桌面的顶部,这里设置plank始终放在其他窗口最上方
+bspc rule -a plank state=floating sticky=on
