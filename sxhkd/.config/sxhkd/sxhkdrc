@@ -30,9 +30,8 @@ super + shift + Return
 # https://github.com/windelicato/dotfiles/blob/master/.config/sxhkd/sxhkdrc
 #
 super + e
-	#bspc window -f {next.floating,next.tiled}
-	#bspc node -f {last.floating,last.tiled}
-	bspc node -f last.focused.tiled
+	bspc node -f {last.floating,last.tiled}
+#	bspc node -f last.tiled
 
 #
 # @符号表示松开时才触发
