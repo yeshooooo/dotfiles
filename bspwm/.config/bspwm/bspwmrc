@@ -23,8 +23,6 @@ xsetroot -cursor_name left_ptr
 
 $HOME/.config/bspwm/scripts/auto-change-wallpapers.sh &
 
-
-
 # cairo-dock
 #
 
@@ -133,8 +131,8 @@ udiskie &
 
 # 笔记本外接显示器
 bspc monitor eDP-1-1 -d 1 2 3 4 5
-#bspc monitor HDMI-0 -d 6 7 8 9 10
-bspc monitor DP-2 -d 6 7 8 9 10
+bspc monitor HDMI-0 -d 6 7 8 9 10
+# bspc monitor DP-2 -d 6 7 8 9 10
 #
 # Visual options
 # 可视化参数
@@ -174,9 +172,7 @@ bspc rule -a Screenkey manage=off
 #bspc rule -a Plank state=floating sticky=on layer=above
 #
 # 启动plank
-# 利用脚本方法,防止plank被窗口遮挡 
+# 利用脚本方法,防止plank被窗口遮挡
 #sleep 10
 #sleep 5s && plank -n prim &
 #$HOME/.config/bspwm/scripts/plank.sh &
-
-
