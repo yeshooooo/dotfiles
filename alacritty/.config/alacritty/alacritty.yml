@@ -110,3 +110,17 @@ mouse_bindings:
 env:
     TERM: tmux-256color
 
+# 设置光标Cursor
+cursor:
+    style:
+      # 设置光标为块或者细线
+      shape: Block
+      blinking: Always
+
+    vi_mod_style:
+      shape: Block
+      blinking: Always
+
+    unfocused_hollow: true
+    blink_interval: 700
+    blink_timeout: 128
