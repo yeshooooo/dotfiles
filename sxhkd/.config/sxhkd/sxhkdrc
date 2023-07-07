@@ -6,7 +6,8 @@
 # Workstation Monitor
 #
 
-alt + w
+# 修改切换显示器为alt + shift + w 因为alt + w 跟tmux中创建新窗口冲突了
+alt + shift + w
 	bspc monitor -f next
 
 
