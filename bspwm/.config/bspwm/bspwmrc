@@ -153,7 +153,7 @@ bspc config gapless_monocle true
 # 参考自https://github.com/gh0stzk/dotfiles/blob/master/config/bspwm/bspwmrc
 # 相关参数 能够接受的值在man bspwm中有
 bspc config focus_follows_pointer true
-bspc config pointer_follows_focus false
+bspc config pointer_follows_focus true
 #bspc config pointer_motion_interval       5
 #bspc config pointer_modifier              mod4
 bspc config pointer_action1 move

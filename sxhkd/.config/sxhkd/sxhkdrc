@@ -6,7 +6,8 @@
 # Workstation Monitor
 #
 
-alt + w
+# 修改切换显示器为alt + shift + w 因为alt + w 跟tmux中创建新窗口冲突了
+alt + shift + w
 	bspc monitor -f next
 
 
@@ -30,7 +31,8 @@ super + shift + Return
 # https://github.com/windelicato/dotfiles/blob/master/.config/sxhkd/sxhkdrc
 #
 super + e
-	#bspc window -f {next.floating,next.tiled}
+	bspc node -f {last.floating,last.tiled}
+#	bspc node -f last.tiled
 
 #
 # @符号表示松开时才触发
