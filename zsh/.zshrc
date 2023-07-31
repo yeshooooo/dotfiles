@@ -137,3 +137,13 @@ fi
 
 #fi
 export PATH=/home/yeshooo/.local/bin:/home/yeshooo/.local/bin:/home/yeshooo/.nvm/versions/node/v18.15.0/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/yeshooo/dotnet:/opt/anaconda/bin:/home/yeshooo/dotnet:/opt/anaconda/bin:/home/yeshooo/.local/share/dwm/statusbar:/home/yeshooo/.cargo/bin
+export PATH=/home/yeshooo/.local/bin:/home/yeshooo/.local/bin:/home/yeshooo/.nvm/versions/node/v18.15.0/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/yeshooo/dotnet:/opt/anaconda/bin:/home/yeshooo/dotnet:/opt/anaconda/bin:/home/yeshooo/.local/share/dwm/statusbar:/home/yeshooo/.cargo/bin:/home/yeshooo/.local/share/bob/nvim-bin
+
+
+# 添加ue相关系统变量
+# # https://github.com/CesiumGS/cesium-unreal/blob/ue5-main/Documentation/developer-setup-linux.md
+# 这里设置到UE5目录而不是UnrealEditor所在的目录
+export UNREAL_ENGINE_DIR=/home/yeshooo/software/UE5
+export UNREAL_ENGINE_COMPILER_DIR=$UNREAL_ENGINE_DIR/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v20_clang-13.0.1-centos7/x86_64-unknown-linux-gnu
+export UNREAL_ENGINE_LIBCXX_DIR=$UNREAL_ENGINE_DIR/Engine/Source/ThirdParty/Unix/LibCxx
+
