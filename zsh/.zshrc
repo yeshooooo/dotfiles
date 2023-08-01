@@ -136,3 +136,4 @@ fi
 	#plank -n primdock & 2>>/dev/null
 
 #fi
+export PATH=/home/yeshooo/.cargo/bin:/home/yeshooo/.local/bin:/home/yeshooo/.local/bin:/home/yeshooo/.nvm/versions/node/v18.15.0/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/yeshooo/dotnet:/opt/anaconda/bin:/home/yeshooo/dotnet:/opt/anaconda/bin:/home/yeshooo/.local/share/dwm/statusbar:/home/yeshooo/.local/share/bob/nvim-bin

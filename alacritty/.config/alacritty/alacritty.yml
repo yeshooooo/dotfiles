@@ -121,6 +121,6 @@ cursor:
       shape: Block
       blinking: Always
 
-    unfocused_hollow: true
+    unfocused_hollow: false
     blink_interval: 700
     blink_timeout: 128
