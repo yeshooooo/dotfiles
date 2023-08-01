@@ -105,11 +105,11 @@ mouse:
 mouse_bindings:
     - { mouse: Right, action: PasteSelection }
 
-# 设置真实颜色为tmux用
-
-env:
-    TERM: tmux-256color
-
+# # 设置真实颜色为tmux用
+# 这里取消在这里设置tmux的颜色模式，因为他会将当前命令再显示到结果中
+# env:
+#     TERM: tmux-256color
+#
 # 设置光标Cursor
 cursor:
     style:
