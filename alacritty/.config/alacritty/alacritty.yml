@@ -105,6 +105,7 @@ mouse_bindings:
 # env:
 #     TERM: tmux-256color
 #
+#
 # 设置光标Cursor
 cursor:
     style:
@@ -119,3 +120,4 @@ cursor:
     unfocused_hollow: false
     blink_interval: 700
     blink_timeout: 128
+
