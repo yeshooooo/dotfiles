@@ -170,3 +170,5 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# 把当前路径添加到 环境变量,不然idea terminal 报错
+export PATH=$PATH:./
