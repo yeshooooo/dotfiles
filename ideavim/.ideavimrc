@@ -1,0 +1,211 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h37q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+"-------set scrolloff=4
+
+" Do incremental searching.
+"-----------------set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+"---------------map Q gq
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" Highlight copied text
+"--------------------Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+"---------------------Plug 'tpope/vim-commentary'
+
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva3t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
+
+
+"---------------------------------------------以上为ideavim默认自带-------------------------------------------"
+
+"---------------------------------------------以下为个人配置------------------------"n>(easymotion-s)
+" 需要先安装IdeaVim, IdeaVimExtension, IdeaVim-EasyMotion三个插件"
+" 自动切换中英文需要安装SmartInput插件"
+" 设置leader键为空格"
+let g:mapleader = ' '
+set timeoutlen=500
+" 中英文输入法自动切换"
+"普通模式强制以英文模式
+"set keep-english-in-normal-and-restore-in-insert
+"set switch-to-english-when-exit-insert-mode
+" 上面这两条设置没啥用，改用SmartInput插件自动切换"
+
+" surround插件"
+set surround
+
+" easymotion"
+let g:EasyMotion_do_mapping = 0
+set easymotion
+" 触发搜索移动"
+nmap <leader><leader> <Plug>(easymotion-s)
+
+
+" 仿真NERDTree插件
+" https://github.com/JetBrains/ideavim/wiki/NERDTree-support
+set NERDTree
+nmap <leader>e :NERDTreeFind<CR>
+
+" https://github.com/JetBrains/ideavim/blob/master/doc/IdeaVim%20Plugins.md
+" 替换操作"
+Plug 'vim-scripts/ReplaceWithRegister'
+nmap rs  <Plug>ReplaceWithRegisterOperator
+nmap rss <Plug>ReplaceWithRegisterLine
+xmap rs  <Plug>ReplaceWithRegisterVisual
+
+" 高亮搜索
+set hlsearch
+" 搜索时跳到搜索目标处
+set incsearch
+" 智能搜索
+set ignorecase
+" 上面设置了忽略大小写，但是假如输入的搜索中有一个是大写字母，就会自动确认为大小写敏感的"
+set smartcase
+" 行号显示
+set nu
+" 相对行号
+set rnu
+
+" 滚动时保持上下边距
+set scrolloff=5
+" 该设置可以将光标定位到窗口中间位置
+" set scrolloff=999
+
+" Esc 映射
+imap jk <ESC>
+imap jj <ESC>
+
+" 取消高亮
+nmap <ESC> :noh<CR>
+nmap <C-[> :noh<CR>
+
+" 快捷方式, 退出当前缓冲区
+nmap <C-q> :q<CR>
+
+" 拖拽行
+"nmap <C-S-j> :move +1<CR>==
+"nmap <C-S-k> :move -2<CR>==
+"xmap <C-S-j> :move '>+1<CR>gv=gv
+"xmap <C-S-k> :move '<-2<CR>gv=gv
+
+" 系统剪切板
+" 如果不这么做的话，需要复制到跟系统联通的+号寄存器中，+号寄存器跟系统剪切板是联通的"
+set clipboard^=unnamed,unnamedplus
+" x模式黏贴后重新复制被黏贴内容
+" xnoremap p pgvy
+
+" 复制黏贴
+xmap <C-c> y
+" ctrl + shift + v"
+map <C-S-V> p
+imap <C-S-V> <C-r>+
+
+" 复制整个缓冲区
+nmap <leader>y mmggVGy`m
+
+" https://github.com/JetBrains/ideavim
+" IdeaVim: track action Ids
+" 使用vim按键映射idea的操作"
+" 前进后退"
+nmap <C-o> <Action>(Back)
+nmap <C-i> <Action>(Forward)
+" nmap u <Action>($Undo)
+" nmap <C-r> <Action>($Redo)
+" 文件查找
+nmap <leader>ff <Action>(GotoFile)
+" 全局模糊搜索
+
+nmap <leader>fg <Action>(FindInPath)
+" 等价于idea中的shift+shift
+nmap <leader>fb <Action>(SearchEverywhere)
+" 全局替换
+nmap <leader>fr <Action>(ReplaceInPath)
+" 类查找
+nmap gw <Action>(GotoClass)
+" 类方法或类成员字段查找
+nmap gs <Action>(FileStructurePopup)
+" 实现类或方法查找
+nmap g<space> <Action>(GotoImplementation)
+" 跳转到定义或引用处
+nmap gd <Action>(GotoDeclaration)
+" 查找所有引用，类似vim中的quickfix列表
+nmap gr <Action>(FindUsages)
+" 找到被实现的类或方法
+nmap gp <Action>(GotoSuperMethod)
+" 注释
+nmap gcc <Action>(CommentByLineComment)
+xmap gc <Action>(CommentByLineComment)<Esc>
+" 同步nvim注释改为空格+/"
+" nmap <leader>/ <Action>(CommentByLineComment)
+" xmap <leader>/ <Action>(CommentByLineComment)<Esc>
+" 代码编辑提示
+nmap <leader>ca <Action>(ShowIntentionActions)
+xmap <leader>ca <Action>(ShowIntentionActions)
+" 新建类
+nmap <leader>nc <Action>(NewClass)
+" 打开终端
+nmap `` <Action>(ActivateTerminalToolWindow)
+" 翻译
+xmap <leader>t <Action>($EditorTranslateAction)<Esc>
+nmap <leader>T <Action>($ShowTranslationDialogAction)
+nmap <leader>t viw<Action>($EditorTranslateAction)
+" 格式化
+nmap <leader>fm <Action>(ReformatCode)
+" 重命名
+nmap <leader>rn <Action>(RenameElement)
+" 类wildfire
+nmap <Enter> <Action>(EditorSelectWord)
+nmap <BS> <Action>(EditorUnSelectWord)
+xmap <Enter> <Action>(EditorSelectWord)
+xmap <BS> <Action>(EditorUnSelectWord)
+" 找到上一个或下一个突出高亮
+nmap <C-j> <Action>(GotoNextElementUnderCaretUsage)
+nmap <C-k> <Action>(GotoPrevElementUnderCaretUsage)
+" 打开最近的项目
+nmap <leader>fs <Action>($LRU)
+" 选择主题
+nmap <leader>fc <Action>(ChangeLaf)
+" vim模式开关
+nmap <leader>vim <Action>(VimPluginToggle)
+" 选择idea keymap
+nmap <leader>mp <Action>(ChangeKeymap)
+" 跳转tab
+nmap [t <Action>(PreviousTab)
+nmap ]t <Action>(NextTab)
+" 跳转method
+nmap [f <Action>(MethodUp)
+nmap ]f <Action>(MethodDown)
+" debug
+nmap <leader>dd <Action>(DebugClass)
+nmap <leader>db <Action>(ToggleLineBreakpoint)
+nmap <leader>dr <Action>(EvaluateExpression)
+" git
+nmap <leader>gb <Action>(Annotate)
+" gpt plugin
+nmap <leader>cg <Action>(Generate)
+nmap <leader>ct <Action>(com.note.chatgpt.OpenCodeAiWindow)
+xmap <leader>ck <Action>(com.note.chatgpt.OpenCodeAiWindowWithText)
+
+" sethandler
+sethandler <C-h> a:ide
+sethandler <C-j> a:vim i:ide
+sethandler <C-k> a:vim i:ide
+sethandler <C-l> a:ide
+sethandler <C-S-V> a:vim

@@ -86,3 +86,36 @@ colors:
     cyan: '#a4ffff'
     white: '#ffffff'
 theme: Dracula
+
+
+# 设置鼠标
+
+mouse:
+    # 设置双击和三连击中间间隔判定时间
+    double_click: { threshold: 300}
+    triple_click: { threshold: 300}
+    hide_when_typing: true
+
+# 设置鼠标右键为粘贴
+mouse_bindings:
+    - { mouse: Right, action: PasteSelection }
+
+# # 设置真实颜色为tmux用
+# 这里取消在这里设置tmux的颜色模式，因为他会将当前命令再显示到结果中
+# env:
+#     TERM: tmux-256color
+#
+# 设置光标Cursor
+cursor:
+    style:
+      # 设置光标为块或者细线
+      shape: Block
+      blinking: Always
+
+    vi_mod_style:
+      shape: Block
+      blinking: Always
+
+    unfocused_hollow: false
+    blink_interval: 700
+    blink_timeout: 128
