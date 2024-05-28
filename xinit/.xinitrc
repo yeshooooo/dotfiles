@@ -56,10 +56,12 @@ fi
 #nutstore &
 
 # 启动bspwm
-#exec bspwm
+exec bspwm
 
 # 启动xfce4
-startxfce4 
+#startxfce4 
+
+
 
 # 延迟启动plank
-plank -n primdock
+#plank -n primdock
