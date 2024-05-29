@@ -61,7 +61,8 @@ exec bspwm
 # 启动xfce4
 #startxfce4 
 
-
+# 启动dpi设置
+sh ~/dotfiles/xinit/set-dpi.sh
 
 # 延迟启动plank
 #plank -n primdock

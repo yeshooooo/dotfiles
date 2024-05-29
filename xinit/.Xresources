@@ -1,0 +1,13 @@
+# 调整dpi缩放，96为基数
+Xft.dpi: 150
+
+! 针对HDMI-0显示器的设置
+#if DISPLAY=HDMI-0
+Xft.dpi: 120
+#endif
+
+! 针对DP-1显示器的设置
+#if DISPLAY=DP-4
+Xft.dpi: 150
+#endif
+
