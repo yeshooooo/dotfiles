@@ -1,2 +1,2 @@
 此文件夹下的文件都不能用stow方法作软连接，需要复制到相应目录，对应目录在各个文件夹下有说明
-将整个asciiart文件夹复制到$HOME/.local/share/文件夹下
+将整个asciiart文件夹复制到$HOME/.local/bin/colorscript文件夹下

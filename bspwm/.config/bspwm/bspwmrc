@@ -42,7 +42,8 @@ $HOME/.config/bspwm/scripts/auto-change-wallpapers.sh &
 # polybar-themes
 # https://github.com/adi1090x/polybar-themes
 # 也可以paru 安装polybar-themes-git
-#~/.config/polybar/launch.sh --forest
+~/.config/polybar/launch.sh --forest
+
 # polybar-collection
 # https://github.com/Murzchnvok/polybar-collection
 #$HOME/polybar-collection/launch.sh
@@ -78,7 +79,8 @@ fcitx5 &
 
 #
 # 启动jetbrains-toolbox
-#jetbrains-toolbox &
+jetbrains-toolbox &
+
 
 #
 # 启动坚果云
@@ -135,9 +137,11 @@ udiskie &
 #bspc monitor DP-4 -d 1 2 3 4 5 6 7 8 9 10
 #
 # 俩都10个太多了,用不过来
-bspc monitor DP-2 -d 1 2 3 4 5
-bspc monitor DP-4 -d 6 7 8 9 10
+#bspc monitor DP-2 -d 1 2 3 4 5
+#bspc monitor DP-4 -d 6 7 8 9 10
 
+bspc monitor DP-4 -d 1 2 3 4 5
+bspc monitor HDMI-0 -d 6 7 8 9 10
 #
 # Visual options
 # 可视化参数
