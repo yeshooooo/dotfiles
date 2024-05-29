@@ -75,7 +75,8 @@ fcitx5 &
 
 #
 # 启动jetbrains-toolbox
-jetbrains-toolbox &
+# xfce4-panel中可以自动显示他,toolbox中有随系统开启启动选项,这里如果再运行一遍,开机后会弹出窗口
+# jetbrains-toolbox &
 
 
 #
