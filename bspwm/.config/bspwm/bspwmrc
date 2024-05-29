@@ -44,6 +44,11 @@ $HOME/.config/bspwm/scripts/auto-change-wallpapers.sh &
 # 启动网络托盘
 #nm-applet &
 
+# 
+# 启动xfce4-panel
+#
+xfce4-panel &
+
 #
 # 启动蓝牙系统托盘
 #blueman-applet &
@@ -131,16 +136,14 @@ udiskie &
 #bspc monitor DP-2 -d 1 2 3 4 5
 #bspc monitor DP-4 -d 6 7 8 9 10
 
-<<<<<<< HEAD
+# 24 + 27
 bspc monitor DP-4 -d 1 2 3 4 5
 bspc monitor HDMI-0 -d 6 7 8 9 10
-=======
 # 笔记本外接显示器
 # bspc monitor eDP-1-1 -d 1 2 3 4 5
-bspc monitor DP-2 -d 1 2 3 4 5
-bspc monitor HDMI-0 -d 6 7 8 9 10
+#bspc monitor DP-2 -d 1 2 3 4 5
+#bspc monitor HDMI-0 -d 6 7 8 9 10
 # bspc monitor DP-2 -d 6 7 8 9 10
->>>>>>> lenovo
 #
 # Visual options
 # 可视化参数
