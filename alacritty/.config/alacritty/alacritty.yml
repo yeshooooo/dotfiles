@@ -4,6 +4,7 @@ font:
   # Style can be specified to pick a specific face.
   normal:
     family: JetbrainsMono Nerd Font Mono
+    #family: Sauce Code Pro Nerd Font Mono
     style: Light
     # family: "Fira Code"
     # family: "Source Code Pro"
@@ -12,6 +13,7 @@ font:
   # The bold font face
   bold:
     family: JetbrainsMono Nerd Font Mono
+    # family: Sauce Code Pro Nerd Font Mono
     style: Medium
     # family: "Fira Code"
     # family: "Source Code Pro"
@@ -19,6 +21,7 @@ font:
   # The italic font face
   italic:
     family: JetbrainsMono Nerd Font Mono
+    #family: Sauce Code Pro Nerd Font Mono
     style: "Light Italic"
     # style: "Light Oblique"
     # family: "Fira Code"
@@ -88,6 +91,11 @@ colors:
 theme: Dracula
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> lenovo
 # 设置鼠标
 
 mouse:
@@ -105,7 +113,10 @@ mouse_bindings:
 # env:
 #     TERM: tmux-256color
 #
+<<<<<<< HEAD
 #
+=======
+>>>>>>> lenovo
 # 设置光标Cursor
 cursor:
     style:
@@ -120,4 +131,7 @@ cursor:
     unfocused_hollow: false
     blink_interval: 700
     blink_timeout: 128
+<<<<<<< HEAD
 
+=======
+>>>>>>> lenovo

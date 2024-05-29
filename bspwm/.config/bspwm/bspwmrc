@@ -23,15 +23,6 @@ xsetroot -cursor_name left_ptr
 
 $HOME/.config/bspwm/scripts/auto-change-wallpapers.sh &
 
-#
-# 启动plank
-# 利用脚本方法,防止plank被窗口遮挡 
-#sleep 10
-#plank -n primdock &
-#$HOME/.config/bspwm/scripts/plank.sh &
-
-
-
 # cairo-dock
 #
 
@@ -140,8 +131,16 @@ udiskie &
 #bspc monitor DP-2 -d 1 2 3 4 5
 #bspc monitor DP-4 -d 6 7 8 9 10
 
+<<<<<<< HEAD
 bspc monitor DP-4 -d 1 2 3 4 5
 bspc monitor HDMI-0 -d 6 7 8 9 10
+=======
+# 笔记本外接显示器
+# bspc monitor eDP-1-1 -d 1 2 3 4 5
+bspc monitor DP-2 -d 1 2 3 4 5
+bspc monitor HDMI-0 -d 6 7 8 9 10
+# bspc monitor DP-2 -d 6 7 8 9 10
+>>>>>>> lenovo
 #
 # Visual options
 # 可视化参数
@@ -174,3 +173,14 @@ bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+
+# plank始终置顶设置,受chatgpt启发
+# bspwm窗口通常被放置在桌面的顶部,这里设置plank始终放在其他窗口最上方
+# xprop | grep WM_CLASS测出来的名字
+#bspc rule -a Plank state=floating sticky=on layer=above
+#
+# 启动plank
+# 利用脚本方法,防止plank被窗口遮挡
+#sleep 10
+#sleep 5s && plank -n prim &
+#$HOME/.config/bspwm/scripts/plank.sh &
