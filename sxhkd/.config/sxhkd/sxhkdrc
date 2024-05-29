@@ -1,0 +1,260 @@
+#
+# wm independent hotkeys
+#
+
+
+# Workstation Monitor
+#
+
+# 修改切换显示器为alt + shift + w 因为alt + w 跟tmux中创建新窗口冲突了
+alt + shift + w
+	bspc monitor -f next
+
+
+
+
+# terminal emulator
+super + Return
+#	urxvt
+	alacritty
+	
+# 设置浮动窗口
+# bspc rule -a 后面必须跟的是类名，使用xprop | grep WM_CLASS 命令点击相应窗口即可获取对应的类名
+# 窗口大小设置受启发于man alacritty中的-o 参数，覆盖默认配置文件
+# 参数名字http://blog.dreamfever.me/2021/02/13/alacritty-pei-zhi-zhi-nan/
+super + shift + Return
+	bspc rule -a Alacritty -o state=floating follow=on && alacritty -o window.dimensions.columns=120 window.dimensions.lines=30
+
+
+#
+# Focus on floating / tiled
+# https://github.com/windelicato/dotfiles/blob/master/.config/sxhkd/sxhkdrc
+#
+super + e
+	bspc node -f {last.floating,last.tiled}
+#	bspc node -f last.tiled
+
+#
+# @符号表示松开时才触发
+# program launcher
+# dmenu_run后面可以加参数，如dmenu_run -b 表示在底部
+#super + @space
+#	dmenu_run
+#super + d
+	#rofi -show run
+# 使用第三方配置法
+# https://github.com/adi1090x/rofi
+# 这里对应的type-n 目录下还要改成相应的style
+super + @d
+	~/.config/rofi/launchers/type-3/launcher.sh
+
+# 热重启sxhkd的快捷键
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+
+# 启动plank
+#
+#super + 1
+	#~/.config/bspwm/scripts/plank.sh
+#	bspc rule -a Plank -o state=floating && plank -n primdock
+#
+# 应用程序快捷键
+#
+
+control + grave
+	flameshot gui
+
+
+
+#
+# bspwm hotkeys
+#
+
+# quit/restart bspwm
+super + alt + {q,r}
+	bspc {quit,wm -r}
+
+# close and kill
+super + {_,shift + }w
+	bspc node -{c,k}
+
+# alternate between the tiled and monocle layout
+super + m
+	bspc desktop -l next
+
+# send the newest marked node to the newest preselected node
+super + y
+	bspc node newest.marked.local -n newest.!automatic.local
+
+# swap the current node and the biggest window
+super + g
+	bspc node -s biggest.window
+
+#
+# state/flags
+#
+
+# set the window state
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# set the node flags
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
+
+#
+# focus/swap
+#
+
+# focus the node in the given direction
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus the node for the given path jump
+super + {p,b,comma,period}
+	bspc node -f @{parent,brother,first,second}
+
+# focus the next/previous window in the current desktop
+super + {_,shift + }c
+	bspc node -f {next,prev}.local.!hidden.window
+
+# focus the next/previous desktop in the current monitor
+super + bracket{left,right}
+	bspc desktop -f {prev,next}.local
+
+# focus the last node/desktop
+super + {grave,Tab}
+	bspc {node,desktop} -f last
+
+# focus the older or newer node in the focus history
+super + {o,i}
+	bspc wm -h off; \
+	bspc node {older,newer} -f; \
+	bspc wm -h on
+######################### 屏幕及窗口切换和移动
+#  个人总结：
+#  node -m next是移动不同的显示器
+#  node -d 是移动不同的桌面
+#  受启发于:
+#  https://www.bilibili.com/video/BV1dB4y1w7FB/?spm_id_from=333.999.0.0&vd_source=c6ca89f75d00cd4da634736edfcca1ae
+#  https://github.com/arcolinux/arcolinux-bspwm/blob/master/etc/skel/.config/bspwm/sxhkd/sxhkdrc
+#
+#
+#
+#
+#
+#
+#
+# focus or send to the given desktop
+#super + {_,shift + }{1-9,0}
+#	bspc {desktop -f,node -d} '^{1-9,10}'
+#	
+# 双屏显示器下在聚焦的屏幕中切换窗口标签
+# 受启发于https://forum.endeavouros.com/t/multi-monitor-in-bspwm/17618/3
+# 不过这里也要改polybar,不然polybar只切换一个屏幕上的便签(暂时未改)
+#
+#
+#
+###################### 切换并且发送当前窗口到标签桌面
+# 可以在命令最末尾添加 --follow 跟随
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} focused:'^{1-9,10}' --follow
+
+##################### 将当前窗口发送到另一个屏幕
+#  指定标签 思路： 目前失败
+#super + shift + {Left,Down,Up,Right} + {1-9,0}
+	#bspc node -m next --follow desktop -f '^{1-9,10'
+#	bspc {node -m next --follow,desktop -f '^{1-9,10'}
+
+# 将当前窗口移动到另一个屏幕,跟随选中的话使用--follow
+super + shift + {Left,Down,Up,Right}
+	bspc node -m next --follow
+
+
+
+
+
+
+
+
+
+
+
+
+###########################################################################
+#
+# preselect
+#
+
+# preselect the direction
+super + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+super + ctrl + space
+	bspc node -p cancel
+
+# cancel the preselection for the focused desktop
+super + ctrl + shift + space
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+#
+# move/resize
+#
+
+# expand a window by moving one of its side outward
+super + alt + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+super + alt + shift + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# move a floating window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# 
+# Resize floating windows
+# https://github.com/windelicato/dotfiles/blob/master/.config/sxhkd/sxhkdrc
+#
+super + shift + {h,l,k,j}
+	xdo resize {-w -20,-w +20,-h -20,-h +20}	bspc window -e {h -10,j +10,k -10,l +10} || {l -10,k +10,j -10,h +10}
+
+
+
+
+
+#
+# Mouse bindings
+# 启发于https://github.com/windelicato/dotfiles/blob/master/.config/sxhkd/sxhkdrc
+# 
+# 官方鼠标问题https://github.com/baskerville/bspwm/issues/599
+# 
+#
+# 最终解决方案
+# 此帖说新版本鼠标绑定在bspwm配置文件而不在sxhkd中https://www.reddit.com/r/bspwm/comments/6pdirx/unknown_domain_or_command_pointer/
+# 此贴中说bspwm默认使用键盘绑定，会自动处理
+# Move or resize window
+#super + button{1-3}
+#	bspc pointer -g {move,resize_side,resize_corner}
+# Needed for ^^^^
+#alt + !button{1-3}
+#    bspc pointer -t %i %i
+
+
+#super + @button{1-3}
+#    bspc pointer -u
+
+# 
+# spawn programs
+# 
+
+
+
