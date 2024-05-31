@@ -53,7 +53,10 @@ fi
 #xdman &
 
 # 启动坚果云
-#nutstore &
+nutstore &
+
+# 启动jetbrains-toolbox
+jetbrains-toolbox &
 
 # 启动bspwm
 exec bspwm
