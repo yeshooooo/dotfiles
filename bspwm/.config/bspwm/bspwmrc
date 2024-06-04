@@ -77,12 +77,14 @@ fcitx5 &
 # 启动jetbrains-toolbox
 # xfce4-panel中可以自动显示他,toolbox中有随系统开启启动选项,这里如果再运行一遍,开机后会弹出窗口
 # jetbrains-toolbox &
+$HOME/.config/bspwm/scripts/start_jetbrains_toolbox.sh &
 
 
 #
 # 启动坚果云
-# 改为再.xinitrc中提前启用，这样就不用每次开启就弹窗口了
+# 改为在脚本中启用，这样就不用每次开启就弹窗口了
 #nutstore &
+$HOME/.config/bspwm/scripts/start_nutstore.sh &
 
 #
 # U盘自动挂载
