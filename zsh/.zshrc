@@ -118,7 +118,14 @@ export PATH=/home/yeshooo/.local/bin:$PATH
 PATH=/home/yeshooo/.local/bin:/home/yeshooo/.local/bin:/home/yeshooo/.nvm/versions/node/v18.15.0/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/yeshooo/dotnet:/opt/anaconda/bin:/home/yeshooo/dotnet:/opt/anaconda/bin:~/.local/share/dwm/statusbar
 
 # 启动时随即显示像素图画
-$HOME/.local/bin/colorscript -r
+#$HOME/.local/bin/colorscript -r
+# 随机执行colorscript文件夹中的脚本
+colorscripts=($HOME/.local/bin/colorscript/*)
+random_script=${colorscripts[RANDOM % ${#colorscripts[@]}]}
+if [[ -x $random_script ]]; then
+    $random_script
+fi
+
 
 # 设置fzf使用ripgrep
 # FZF_DEFAULT_OPTS 的-m 变量可以使按下<Tab> 或 <Shift-Tab>后进行多重选择。
@@ -136,8 +143,6 @@ fi
 	#plank -n primdock & 2>>/dev/null
 
 #fi
-export PATH=/home/yeshooo/.local/bin:/home/yeshooo/.local/bin:/home/yeshooo/.nvm/versions/node/v18.15.0/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/yeshooo/dotnet:/opt/anaconda/bin:/home/yeshooo/dotnet:/opt/anaconda/bin:/home/yeshooo/.local/share/dwm/statusbar:/home/yeshooo/.cargo/bin
-export PATH=/home/yeshooo/.local/bin:/home/yeshooo/.local/bin:/home/yeshooo/.nvm/versions/node/v18.15.0/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/yeshooo/dotnet:/opt/anaconda/bin:/home/yeshooo/dotnet:/opt/anaconda/bin:/home/yeshooo/.local/share/dwm/statusbar:/home/yeshooo/.cargo/bin:/home/yeshooo/.local/share/bob/nvim-bin
 
 
 # 添加ue相关系统变量
@@ -176,3 +181,8 @@ export PATH=/home/yeshooo/.cargo/bin:/home/yeshooo/.local/bin:/home/yeshooo/.loc
 
 # 配置Geoserver数据路径
 export GEOSERVER_DATA_DIR=/home/yeshooo/E/GeoServerData
+
+#if command -v btrfs &> /dev/null;then
+#	sudo btrfs device scan
+#fi
+
