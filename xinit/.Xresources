@@ -2,12 +2,12 @@
 Xft.dpi: 150
 
 ! 针对HDMI-0显示器的设置
-#if DISPLAY=HDMI-0
+#if DISPLAY=HDMI-1
 Xft.dpi: 120
 #endif
 
 ! 针对DP-1显示器的设置
-#if DISPLAY=DP-4
+#if DISPLAY=DP-1
 Xft.dpi: 150
 #endif
 
