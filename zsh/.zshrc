@@ -176,3 +176,8 @@ export GEOSERVER_DATA_DIR=/home/yeshooo/E/GeoServerData
 #	sudo btrfs device scan
 #fi
 
+# 更改ls/ll/lt命令的显示图标
+# Set-up icons for files/folders in terminal
+alias ls='eza -a --icons'
+alias ll='eza -al --icons'
+alias lt='eza -a --tree --level=1 --icons'
