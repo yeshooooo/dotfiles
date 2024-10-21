@@ -63,9 +63,9 @@ super + Escape
 # 应用程序快捷键
 #
 
-control + grave
-	flameshot gui
-
+#control + grave
+#	flameshot gui
+# 弃用Snipaste
 
 
 #
