@@ -48,6 +48,8 @@ $HOME/.config/bspwm/scripts/auto-change-wallpapers.sh &
 # 启动xfce4-panel
 #
 xfce4-panel &
+# 避免重叠
+bspc config top_padding 24
 
 #
 # 启动蓝牙系统托盘

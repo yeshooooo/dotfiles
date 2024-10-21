@@ -111,14 +111,9 @@ export DOTNET_ROOT=$HOME/dotnet
 # anaconda
 export PATH=$PATH:/opt/anaconda/bin
 
-# 启动时随即显示像素图画
-#$HOME/.local/bin/colorscript -r
-# 随机执行colorscript文件夹中的脚本
-colorscripts=($HOME/.local/bin/colorscript/*)
-random_script=${colorscripts[RANDOM % ${#colorscripts[@]}]}
-if [[ -x $random_script ]]; then
-    $random_script
-fi
+# colorscripts
+
+pokemon-colorscripts --no-title -s -r
 
 
 # 设置fzf使用ripgrep
