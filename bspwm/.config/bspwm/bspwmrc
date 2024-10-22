@@ -53,15 +53,15 @@ bspc config top_padding 24
 
 #
 # 启动蓝牙系统托盘
-#blueman-applet &
+blueman-applet &
 
 #
 # 启动volctl音量托盘
-#volctl &
+volctl &
 
 #
 # 启动麦克风系统托盘
-#mictray &
+mictray &
 
 #
 # 启动数字小键盘
