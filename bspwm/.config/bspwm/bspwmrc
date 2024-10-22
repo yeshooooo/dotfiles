@@ -57,6 +57,7 @@ blueman-applet &
 
 #
 # 启动volctl音量托盘
+sleep 10
 volctl &
 
 #
