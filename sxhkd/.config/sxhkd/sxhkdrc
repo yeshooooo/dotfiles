@@ -257,4 +257,8 @@ super + shift + {h,l,k,j}
 # 
 
 
+# 增加锁屏快捷键
+# 锁屏快捷键
+super + l
+    ~/.config/bspwm/scripts/random_lock_screen.sh
 
