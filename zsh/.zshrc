@@ -182,3 +182,7 @@ alias ls='eza -a --icons'
 alias ll='eza -al --icons'
 alias lt='eza -a --tree --level=1 --icons'
 
+# 配置maven
+export MAVEN_HOME=/opt/apache-maven-3.9.9
+export PATH=$PATH:$MAVEN_HOME/bin
+

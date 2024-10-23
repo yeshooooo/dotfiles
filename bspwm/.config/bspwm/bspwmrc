@@ -194,3 +194,6 @@ bspc rule -a Screenkey manage=off
 #sleep 10
 #sleep 5s && plank -n prim &
 #$HOME/.config/bspwm/scripts/plank.sh &
+
+# 延迟启动polkit-gnome
+(sleep 20 && /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1) &
