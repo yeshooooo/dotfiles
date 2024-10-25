@@ -21,3 +21,4 @@ export QT_USE_PHYSICAL_DPI=1.75
 
 # GTK 设置（为了保持一致性）
 export GDK_SCALE=1.5
+
