@@ -1,0 +1,23 @@
+# ~/.xprofile
+
+# 基本环境变量
+export LANG=zh_CN.UTF-8
+export LANGUAGE=zh_CN:en_US
+
+# Qt 缩放设置
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+export QT_SCALE_FACTOR=1.5
+export QT_SCREEN_SCALE_FACTORS=1.5
+export QT_FONT_DPI=144  # 96 * 1.5
+
+# Qt 主题设置
+export QT_QPA_PLATFORMTHEME=qt5ct
+export QT_STYLE_OVERRIDE=kvantum
+
+# Qt6 特定设置
+export QT_ENABLE_HIGHDPI_SCALING=1.75
+export QT_USE_PHYSICAL_DPI=1.75
+
+
+# GTK 设置（为了保持一致性）
+export GDK_SCALE=1.5
