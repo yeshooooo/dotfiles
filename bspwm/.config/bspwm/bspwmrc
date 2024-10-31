@@ -44,6 +44,10 @@ $HOME/.config/bspwm/scripts/auto-change-wallpapers.sh &
 # 启动网络托盘
 #nm-applet &
 
+# 启动flameshot
+#
+flameshot &
+
 # 
 # 启动xfce4-panel
 #
